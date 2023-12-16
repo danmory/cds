@@ -133,7 +133,7 @@ if __name__ == "__main__":
 
     result: set[int] | None = None
     for pair in combinations(list(graph.V), 2):
-        cds = connected_dominating_set(graph, set({4, 5}), set())
+        cds = connected_dominating_set(graph, set(pair), set())
         if cds is not None:
             if result is None or len(cds) < len(result):
                 result = cds
